@@ -7,7 +7,7 @@
 // woman in train station: https://unsplash.com/photos/2TlAsvhqiL0/download
 
 body {
-  background-image: image-url("woman_train.jpeg");
+  background-image: image-url("trade-finance.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -21,17 +21,20 @@ body {
   padding-bottom: 10px;
 }
 
+
+//Welcome
 .home-container {
   text-align: center;
   background-color: #EEE;
   border-style: groove;
   padding-bottom: 15px;
-  opacity: 0.8;
+  opacity: 0.95;
   margin-top: 15px;
 }
 
 #tagline {
-  color: green;
+  color: #666;
+  font-family: Helvetica, sans-serif;
 }
 
 #main-button {
@@ -39,8 +42,8 @@ body {
   border-width: thin;
   border-radius: 15px;
   border-color: black;
-  background-color: green;
-  color: #FFF;
+  background-color: purple;
+  color: #EEE;
   margin-top: -10px;
 }
 
@@ -49,10 +52,24 @@ body {
   border-width: thin;
   border-radius: 15px;
   border-color: black;
-  background-color: #33AA33;
+  background-color: #990099;
   color: #FFF;
 }
 
+#big-welcome {
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+#big-title {
+  color: purple;
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+//Dashboard
 .dashboard-body {
   background-image: none;
 }
