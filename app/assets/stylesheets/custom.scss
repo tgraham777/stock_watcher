@@ -1,5 +1,5 @@
 body {
-  background-image: image-url("trade-finance.jpg");
+  background-image: image-url("stocks2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -35,7 +35,7 @@ body {
   border-width: medium;
   border-radius: 15px;
   border-color: #BBB;
-  background-color: purple;
+  background-color: #AA3333;
   color: #EEE;
   margin-top: -10px;
 }
@@ -45,7 +45,7 @@ body {
   border-width: medium;
   border-radius: 15px;
   border-color: #AAA;
-  background-color: #992299;
+  background-color: #AA4444;
   color: #FFF;
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 #big-title {
-  color: purple;
+  color: #AA3333;
   font-weight: 500;
   font-style: italic;
 }
@@ -90,8 +90,12 @@ body {
 }
 
 .navbar.navbar-inverse.navbar-fixed-top {
-  background-color: #449944;
+  background-color: #AA3333;
 }
+
+// #logout-background:hover {
+//   background-color: #CCC;
+// }
 
 .img-circle.img-thumbnail.home-image {
   width: 100px;
@@ -108,18 +112,30 @@ body {
 }
 
 #profile-rep-box {
-  height: 540px;
+  height: 500px;
 }
 
 #commit-boxes {
-  height: 510px;
+  height: 500px;
 }
 
 #org-cont-boxes {
-  height: 200px;
+  height: 500px;
 }
 
 .thumbnail {
   border-width: medium;
   border-radius: 25px;
+}
+
+#welcome-message {
+  color: #777;
+}
+
+#stockwatcher-title {
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 500;
+  font-size: 55px;
+  color: #AA3333;
+  font-style: italic;
 }
