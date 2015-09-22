@@ -6,5 +6,6 @@ class StocksController < ApplicationController
   end
 
   def new
+    @stock = 'stock'
   end
 end
