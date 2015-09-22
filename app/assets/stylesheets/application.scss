@@ -1,0 +1,23 @@
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/yeti/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body {
+  padding-top: 10px;
+}
+
+// And finally bootswatch style itself
+@import "bootswatch/yeti/bootswatch";
+
+@import "heroic-features";
+@import "custom";
+
+
+// Whatever application styles you have go last
+// @import "base";
