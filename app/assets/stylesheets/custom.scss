@@ -1,11 +1,3 @@
-// img.img-circle.img-thumbnail.home-image {
-//     border-radius: 50%;
-//     height: 250px;
-// }
-
-// subway: https://unsplash.com/photos/IisDI6liZEM/download
-// woman in train station: https://unsplash.com/photos/2TlAsvhqiL0/download
-
 body {
   background-image: image-url("trade-finance.jpg");
   background-repeat: no-repeat;
@@ -33,26 +25,27 @@ body {
 }
 
 #tagline {
-  color: #666;
-  font-family: Helvetica, sans-serif;
+  color: #777;
+  font-family: Avantgarde, sans-serif;
+  font-size: 30px;
 }
 
 #main-button {
-  border-style: groove;
-  border-width: thin;
+  border-style: solid;
+  border-width: medium;
   border-radius: 15px;
-  border-color: black;
+  border-color: #BBB;
   background-color: purple;
   color: #EEE;
   margin-top: -10px;
 }
 
 #main-button:hover {
-  border-style: groove;
-  border-width: thin;
+  border-style: solid;
+  border-width: medium;
   border-radius: 15px;
-  border-color: black;
-  background-color: #990099;
+  border-color: #AAA;
+  background-color: #992299;
   color: #FFF;
 }
 
