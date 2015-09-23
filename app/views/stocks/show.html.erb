@@ -54,30 +54,50 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12", id="show-title">
-                <h2>Your Watchlist</h2>
+                <h2 id="stock-show-title">Apple (AAPL)</h2>
             </div>
         </div>
 
+        <hr>
+
         <!-- Page Features -->
         <div class="row text-center">
-
-            <div class="col-lg-8 hero-feature">
-                <div class="thumbnail" id="profile-rep-box">
+            <div class="col-lg-8 hero-feature" id="show-box">
+                <div class="thumbnail" id="graph-placeholder">
                     <div class="caption">
-                        <h3>Apple (AAPL)</h3>
+                        <h3 id="key-stats-title">Historical Price</h3>
                     </div>
-                    <h4 class="name ">  </h4>
-                    <h5 class="email">  </h5>
+                </div>
+            </div>
+        </div>
 
-                    <h4 class="starred-repo"><span id="starred"><%#= .starred_repos.count %></span></h4><br>
+        <div class="row text-center">
+            <div class="col-lg-8 hero-feature" id="show-box">
+                <div class="thumbnail" id="key-trading-statistics">
+                    <div class="caption">
+                        <h3 id="key-stats-title">Key Trading Statistics</h3>
+                    </div>
 
-                    <h4 class="starred-repo">
+                    <div id="show-page-data">
+                        <h4 class="MarketCap "> MarketCap: </h4>
+                        <h4 class="Volume"> Volume: </h4>
+                        <h4 class="ChangeYTD"> ChangeYTD: </h4>
+                        <h4 class="ChangePercentYTD"> ChangePercentYTD: </h4>
+                        <h4 class="High "> High: </h4>
+                        <h4 class="Low"> Low: </h4>
+                        <h4 class="Open"> Open: </h4>
+                    </div>
 
-                    </h4>
+                </div>
+            </div>
+        </div>
 
-                    <h4 class="starred-repo">
-
-                    </h4>
+        <div class="row text-center">
+            <div class="col-lg-8 hero-feature" id="show-box">
+                <div class="thumbnail" id="trend-analysis-detail">
+                    <div class="caption">
+                        <h3 id="key-stats-title">Trend Analysis Details</h3>
+                    </div>
                 </div>
             </div>
         </div>
