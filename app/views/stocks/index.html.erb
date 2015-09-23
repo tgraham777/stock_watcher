@@ -61,14 +61,16 @@
           </p>
         </header>
 
-        <%= button_to "Add a new stock", new_stock_path, method: :get %>
+        <div class="new-stock-button">
+          <%= button_to "Add a new stock", new_stock_path, method: :get %>
+        </div>
 
         <hr>
 
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h2>Your Watchlist</h2>
+                <h2 id="your-watchlist">Your Watchlist</h2>
             </div>
         </div>
 
@@ -78,76 +80,103 @@
             <div class="col-md-6 col-sm-12 hero-feature">
                 <div class="thumbnail" id="profile-rep-box">
                     <div class="caption">
-                        <h3><%= link_to "Apple (AAPL)", stock_path</h3>
+                      <h3 id="key-stats-title"><%= link_to "Apple (AAPL)", stock_path(1) %></h3>
                     </div>
-                    <h4 class="name ">  </h4>
-                    <h5 class="email">  </h5>
 
-                    <h4 class="starred-repo"><span id="starred"><%#= .starred_repos.count %></span></h4><br>
-
-                    <h4 class="starred-repo">
-
-                    </h4>
-
-                    <h4 class="starred-repo">
-
-                    </h4>
+                    <div class="caption", id="box-data">
+                      <h4 class="name "> Name: </h4>
+                      <h4 class="symbol"> Symbol: </h4>
+                      <h4 class="lastprice"> Last Price: </h4>
+                      <h4 class="change"> Change: </h4>
+                      <h4 class="changepercent"> Change (%): </h4>
+                      <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3>United Technologies (UTX)</h3>
-                </div>
-                <h4 class="starred-repo">
+                <div class="thumbnail" id="profile-rep-box">
+                    <div class="caption">
+                      <h3 id="key-stats-title"><%= link_to "United Technologies (UTX)", root_path %></h3>
+                    </div>
 
-                </h4>
-              </div>
+                    <div class="caption", id="box-data">
+                      <h4 class="name "> Name: </h4>
+                      <h4 class="symbol"> Symbol: </h4>
+                      <h4 class="lastprice"> Last Price: </h4>
+                      <h4 class="change"> Change: </h4>
+                      <h4 class="changepercent"> Change (%): </h4>
+                      <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="commit-boxes">
-                <div class="caption">
-                  <h3>General Electric (GE)</h3>
-                </div>
-                <h4 class="starred-repo">
+                <div class="thumbnail" id="profile-rep-box">
+                    <div class="caption">
+                      <h3 id="key-stats-title"><%= link_to "General Electric (GE)", root_path %></h3>
+                    </div>
 
-                </h4>
-              </div>
+                    <div class="caption", id="box-data">
+                      <h4 class="name "> Name: </h4>
+                      <h4 class="symbol"> Symbol: </h4>
+                      <h4 class="lastprice"> Last Price: </h4>
+                      <h4 class="change"> Change: </h4>
+                      <h4 class="changepercent"> Change (%): </h4>
+                      <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="commit-boxes">
-                <div class="caption">
-                  <h3>Boeing (BE)</h3>
-                </div>
-                <h4 class="starred-repo">
+                <div class="thumbnail" id="profile-rep-box">
+                    <div class="caption">
+                      <h3 id="key-stats-title"><%= link_to "Caterpillar (CAT)", root_path %></h3>
+                    </div>
 
-                </h4>
-              </div>
+                    <div class="caption", id="box-data">
+                      <h4 class="name "> Name: </h4>
+                      <h4 class="symbol"> Symbol: </h4>
+                      <h4 class="lastprice"> Last Price: </h4>
+                      <h4 class="change"> Change: </h4>
+                      <h4 class="changepercent"> Change (%): </h4>
+                      <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="org-cont-boxes">
-                <div class="caption">
-                  <h3>Berkshire Hathaway (BRK.B)</h3>
-                </div>
-                <h4 class="starred-repo">
+                <div class="thumbnail" id="profile-rep-box">
+                    <div class="caption">
+                      <h3 id="key-stats-title"><%= link_to "Boeing (BE)", root_path %></h3>
+                    </div>
 
-                </h4>
-              </div>
+                    <div class="caption", id="box-data">
+                      <h4 class="name "> Name: </h4>
+                      <h4 class="symbol"> Symbol: </h4>
+                      <h4 class="lastprice"> Last Price: </h4>
+                      <h4 class="change"> Change: </h4>
+                      <h4 class="changepercent"> Change (%): </h4>
+                      <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="org-cont-boxes">
-                <div class="caption">
-                  <h3>Nike (NKE)</h3>
-                </div>
-                <h4 class="starred-repo">
+                <div class="thumbnail" id="profile-rep-box">
+                    <div class="caption">
+                      <h3 id="key-stats-title"><%= link_to "Two Harbors Investment Corp. (TWO)", root_path %></h3>
+                    </div>
 
-                </h4>
-              </div>
+                    <div class="caption", id="box-data">
+                      <h4 class="name "> Name: </h4>
+                      <h4 class="symbol"> Symbol: </h4>
+                      <h4 class="lastprice"> Last Price: </h4>
+                      <h4 class="change"> Change: </h4>
+                      <h4 class="changepercent"> Change (%): </h4>
+                      <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    </div>
+                </div>
             </div>
 
         </div>

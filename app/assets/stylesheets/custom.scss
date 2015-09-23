@@ -14,6 +14,7 @@ body {
 }
 
 
+
 //Welcome
 .home-container {
   text-align: center;
@@ -66,6 +67,7 @@ body {
 }
 
 
+
 //Dashboard
 .dashboard-body {
   background-image: none;
@@ -112,15 +114,15 @@ body {
 }
 
 #profile-rep-box {
-  height: 500px;
+  height: 300px;
 }
 
 #commit-boxes {
-  height: 500px;
+  height: 300px;
 }
 
 #org-cont-boxes {
-  height: 500px;
+  height: 300px;
 }
 
 .thumbnail {
@@ -142,4 +144,54 @@ body {
 
 #show-title {
   text-align: center;
+}
+
+#box-data {
+  text-align: left;
+  margin-left: 10px;
+}
+
+#your-watchlist {
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+
+
+//Show page
+#graph-placeholder {
+  position: absolute;
+  right: -200px;
+  width: 800px;
+  height: 300px;
+}
+
+#key-trading-statistics {
+  position: absolute;
+  right: -200px;
+  width: 800px;
+  height: 320px;
+  top: 300px;
+}
+
+#stock-show-title {
+  font-weight: 500;
+}
+
+#key-stats-title {
+  margin-top: 10px;
+}
+
+#show-page-data {
+  text-align: left;
+  margin-left: 15px;
+}
+
+#trend-analysis-detail {
+  position: absolute;
+  right: -200px;
+  width: 800px;
+  height: 350px;
+  top: 620px;
 }
