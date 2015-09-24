@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.markitondemand.com/Api/v2/Quote/json?symbol=UTX
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Date:
+      - Thu, 24 Sep 2015 04:16:14 GMT
+      Content-Length:
+      - '341'
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      P3p:
+      - CP="NON PHY ONL UNI PUR FIN COM NAV INT DEM STA HEA CUR ADM DEV OUR IND",
+        policyref="/w3c/p3p.xml"
+      Set-Cookie:
+      - 3481%5F0=FFB78B45E9F1B7E0F7ABDEAA644BE0A9; path=/; HttpOnly
+      - GZIP=1; expires=Tue, 22-Sep-2020 04:16:14 GMT; path=/
+    body:
+      encoding: UTF-8
+      string: '{"Status":"SUCCESS","Name":"United Technologies Corp","Symbol":"UTX","LastPrice":86.95,"Change":-1.25,"ChangePercent":-1.4172335600907,"Timestamp":"Wed
+        Sep 23 15:59:00 UTC-04:00 2015","MSDate":42270.6659722222,"MarketCap":77437496100,"Volume":417933,"ChangeYTD":115,"ChangePercentYTD":-24.3913043478261,"High":88.31,"Low":85.91,"Open":88.25}'
+    http_version: 
+  recorded_at: Thu, 24 Sep 2015 04:16:14 GMT
+recorded_with: VCR 2.9.3
