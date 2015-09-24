@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#show'
 
-  get '/logout', to: 'welcome#show'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :stocks
 end

@@ -42,7 +42,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/logout">Logout</a>
+                        <%= link_to "Logout", logout_path, method: :delete %>
                     </li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
 
     <!-- Page Content -->
     <div class="container">
-      <h3><span class="mega-octicon octicon-flame"></span>&nbsp<span id="welcome-message">Welcome, Tyler</span>&nbsp</h3>
+      <h3><span class="mega-octicon octicon-flame"></span>&nbsp<span id="welcome-message">Welcome, <%=current_user.name %></span>&nbsp</h3>
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">

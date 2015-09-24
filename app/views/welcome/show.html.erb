@@ -1,6 +1,38 @@
-<div class="home-container">
-  <h1 class="home", id="big-welcome">Welcome to <span id="big-title">StockWatcher</span></h1>
-  <h2 class="home", id="tagline">Portfolio construction made easy</h2><br>
-  <%= link_to "Log in with Yahoo!", stocks_path, class: "btn btn-lg btn-default btn-home", id: "main-button" %><br><br>
-  <span id="login-guide">You will need a Yahoo! account to log in. If you don't have one, <%= link_to "create one.", "http://edit.yahoo.com/registration" %></span>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>StockWatcher</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/heroic-features.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="home-container">
+    <h1 class="home", id="big-welcome">Welcome to <span id="big-title">StockWatcher</span></h1>
+    <h2 class="home", id="tagline">Portfolio construction made easy</h2><br>
+    <%= link_to "Log in with Facebook", "/auth/facebook", class: "btn btn-lg btn-default btn-home", id: "main-button" %><br><br>
+    <span id="login-guide">You will need a Facebook account to log in. If you don't have one, <%= link_to "create one.", "http://facebook.com" %></span>
+  </div>
+
+</body>
