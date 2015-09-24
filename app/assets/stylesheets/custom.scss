@@ -79,12 +79,12 @@ body {
 }
 
 .navbar-brand {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bolder;
 }
 
 .collapse.navbar-collapse {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 #jumbo-text {
@@ -142,10 +142,6 @@ body {
   font-style: italic;
 }
 
-#show-title {
-  text-align: center;
-}
-
 #box-data {
   text-align: left;
   margin-left: 10px;
@@ -154,17 +150,24 @@ body {
 #your-watchlist {
   text-align: center;
   font-weight: 500;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  margin-top: -5px;
+  color: #555;
 }
 
 
 
 //Show page
+#show-title {
+  text-align: center;
+}
+
 #graph-placeholder {
   position: absolute;
   right: -200px;
   width: 800px;
   height: 300px;
+  margin-top: 5px;
 }
 
 #key-trading-statistics {
@@ -177,6 +180,7 @@ body {
 
 #stock-show-title {
   font-weight: 500;
+  margin-bottom: -5px;
 }
 
 #key-stats-title {
