@@ -59,109 +59,23 @@
 
       <!-- Page Features -->
       <div class="row text-center">
-
+        <% @stock_array.each do |id, stock_data| %>
           <div class="col-md-6 col-sm-12 hero-feature">
               <div class="thumbnail" id="profile-rep-box">
                   <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to "Apple (AAPL)", stock_path(1) %></h3>
+                    <h3 id="key-stats-title"><%= link_to stock_data[:Name], stock_path(id) %></h3>
                   </div>
-
                   <div class="caption", id="box-data">
-                    <h4 class="name "> Name: </h4>
-                    <h4 class="symbol"> Symbol: </h4>
-                    <h4 class="lastprice"> Last Price: </h4>
-                    <h4 class="change"> Change: </h4>
-                    <h4 class="changepercent"> Change (%): </h4>
-                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                    <h4 class="name "> Name: <%= stock_data[:Name] %></h4>
+                    <h4 class="symbol"> Symbol: <%= stock_data[:Symbol] %></h4>
+                    <h4 class="lastprice"> Last Price: <%= stock_data[:LastPrice] %></h4>
+                    <h4 class="change"> Change: <%= stock_data[:Change] %></h4>
+                    <h4 class="changepercent"> Change (%): <%= stock_data[:ChangePercent] %></h4>
+                    <h4 class="trendanalysis"> Trend Analysis: HOT</h4>
                   </div>
               </div>
           </div>
-
-          <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="profile-rep-box">
-                  <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to "United Technologies (UTX)", root_path %></h3>
-                  </div>
-
-                  <div class="caption", id="box-data">
-                    <h4 class="name "> Name: </h4>
-                    <h4 class="symbol"> Symbol: </h4>
-                    <h4 class="lastprice"> Last Price: </h4>
-                    <h4 class="change"> Change: </h4>
-                    <h4 class="changepercent"> Change (%): </h4>
-                    <h4 class="trendanalysis"> Trend Analysis: </h4>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="profile-rep-box">
-                  <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to "General Electric (GE)", root_path %></h3>
-                  </div>
-
-                  <div class="caption", id="box-data">
-                    <h4 class="name "> Name: </h4>
-                    <h4 class="symbol"> Symbol: </h4>
-                    <h4 class="lastprice"> Last Price: </h4>
-                    <h4 class="change"> Change: </h4>
-                    <h4 class="changepercent"> Change (%): </h4>
-                    <h4 class="trendanalysis"> Trend Analysis: </h4>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="profile-rep-box">
-                  <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to "Caterpillar (CAT)", root_path %></h3>
-                  </div>
-
-                  <div class="caption", id="box-data">
-                    <h4 class="name "> Name: </h4>
-                    <h4 class="symbol"> Symbol: </h4>
-                    <h4 class="lastprice"> Last Price: </h4>
-                    <h4 class="change"> Change: </h4>
-                    <h4 class="changepercent"> Change (%): </h4>
-                    <h4 class="trendanalysis"> Trend Analysis: </h4>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="profile-rep-box">
-                  <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to "Boeing (BE)", root_path %></h3>
-                  </div>
-
-                  <div class="caption", id="box-data">
-                    <h4 class="name "> Name: </h4>
-                    <h4 class="symbol"> Symbol: </h4>
-                    <h4 class="lastprice"> Last Price: </h4>
-                    <h4 class="change"> Change: </h4>
-                    <h4 class="changepercent"> Change (%): </h4>
-                    <h4 class="trendanalysis"> Trend Analysis: </h4>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-6 col-sm-12 hero-feature">
-              <div class="thumbnail" id="profile-rep-box">
-                  <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to "Two Harbors Investment Corp. (TWO)", root_path %></h3>
-                  </div>
-
-                  <div class="caption", id="box-data">
-                    <h4 class="name "> Name: </h4>
-                    <h4 class="symbol"> Symbol: </h4>
-                    <h4 class="lastprice"> Last Price: </h4>
-                    <h4 class="change"> Change: </h4>
-                    <h4 class="changepercent"> Change (%): </h4>
-                    <h4 class="trendanalysis"> Trend Analysis: </h4>
-                  </div>
-              </div>
-          </div>
-
+        <% end %>
       </div>
 
       <hr>

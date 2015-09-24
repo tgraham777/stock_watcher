@@ -19,7 +19,7 @@ class StocksController < ApplicationController
   end
 
   def index
-    @stock = Stock.all
+    @stock_array = current_user.create_stock_array
   end
 
   def show
