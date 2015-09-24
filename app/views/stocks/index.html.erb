@@ -1,173 +1,187 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="button-logout">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">StockWatcher</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <%= link_to "Logout", logout_path, method: :delete %>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<head>
 
-<!-- Page Content -->
-<div class="container">
-  <h3><span class="mega-octicon octicon-flame"></span>&nbsp<span id="welcome-message">Welcome, <%=current_user.name %></span>&nbsp</h3>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Jumbotron Header -->
-    <header class="jumbotron hero-spacer">
-      <h1 id="jumbo-text">Welcome to <span id="stockwatcher-title">StockWatcher</span></h1>
-      <p>
-        StockWatcher lets you add your favorite stocks to your watchlist and track them with ease
-      </p>
-    </header>
+  <!-- Custom CSS -->
+  <link href="css/heroic-features.css" rel="stylesheet">
 
-    <div class="new-stock-button">
-      <%= button_to "Add a new stock", new_stock_path, method: :get %>
-    </div>
+</head>
 
-    <hr>
+<body class="dashboard-body">
 
-    <!-- Title -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 id="your-watchlist">Your Watchlist</h2>
-        </div>
-    </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="button-logout">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">StockWatcher</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li>
+                      <%= link_to "Logout", logout_path, method: :delete %>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
-    <!-- Page Features -->
-    <div class="row text-center">
+  <!-- Page Content -->
+  <div class="container">
+    <h3><span class="mega-octicon octicon-flame"></span>&nbsp<span id="welcome-message">Welcome, <%=current_user.name %></span>&nbsp</h3>
 
-        <div class="col-md-6 col-sm-12 hero-feature">
-            <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3 id="key-stats-title"><%= link_to "Apple (AAPL)", stock_path(1) %></h3>
-                </div>
+      <!-- Jumbotron Header -->
+      <header class="jumbotron hero-spacer">
+        <h1 id="jumbo-text">Welcome to <span id="stockwatcher-title">StockWatcher</span></h1>
+        <p>
+          StockWatcher lets you add your favorite stocks to your watchlist and track them with ease
+        </p>
+      </header>
 
-                <div class="caption", id="box-data">
-                  <h4 class="name "> Name: </h4>
-                  <h4 class="symbol"> Symbol: </h4>
-                  <h4 class="lastprice"> Last Price: </h4>
-                  <h4 class="change"> Change: </h4>
-                  <h4 class="changepercent"> Change (%): </h4>
-                  <h4 class="trendanalysis"> Trend Analysis: </h4>
-                </div>
-            </div>
-        </div>
+      <div class="new-stock-button">
+        <%= button_to "Add a new stock", new_stock_path, method: :get %>
+      </div>
 
-        <div class="col-md-6 col-sm-12 hero-feature">
-            <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3 id="key-stats-title"><%= link_to "United Technologies (UTX)", root_path %></h3>
-                </div>
+      <hr>
 
-                <div class="caption", id="box-data">
-                  <h4 class="name "> Name: </h4>
-                  <h4 class="symbol"> Symbol: </h4>
-                  <h4 class="lastprice"> Last Price: </h4>
-                  <h4 class="change"> Change: </h4>
-                  <h4 class="changepercent"> Change (%): </h4>
-                  <h4 class="trendanalysis"> Trend Analysis: </h4>
-                </div>
-            </div>
-        </div>
+      <!-- Title -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h2 id="your-watchlist">Your Watchlist</h2>
+          </div>
+      </div>
 
-        <div class="col-md-6 col-sm-12 hero-feature">
-            <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3 id="key-stats-title"><%= link_to "General Electric (GE)", root_path %></h3>
-                </div>
+      <!-- Page Features -->
+      <div class="row text-center">
 
-                <div class="caption", id="box-data">
-                  <h4 class="name "> Name: </h4>
-                  <h4 class="symbol"> Symbol: </h4>
-                  <h4 class="lastprice"> Last Price: </h4>
-                  <h4 class="change"> Change: </h4>
-                  <h4 class="changepercent"> Change (%): </h4>
-                  <h4 class="trendanalysis"> Trend Analysis: </h4>
-                </div>
-            </div>
-        </div>
+          <div class="col-md-6 col-sm-12 hero-feature">
+              <div class="thumbnail" id="profile-rep-box">
+                  <div class="caption">
+                    <h3 id="key-stats-title"><%= link_to "Apple (AAPL)", stock_path(1) %></h3>
+                  </div>
 
-        <div class="col-md-6 col-sm-12 hero-feature">
-            <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3 id="key-stats-title"><%= link_to "Caterpillar (CAT)", root_path %></h3>
-                </div>
+                  <div class="caption", id="box-data">
+                    <h4 class="name "> Name: </h4>
+                    <h4 class="symbol"> Symbol: </h4>
+                    <h4 class="lastprice"> Last Price: </h4>
+                    <h4 class="change"> Change: </h4>
+                    <h4 class="changepercent"> Change (%): </h4>
+                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                  </div>
+              </div>
+          </div>
 
-                <div class="caption", id="box-data">
-                  <h4 class="name "> Name: </h4>
-                  <h4 class="symbol"> Symbol: </h4>
-                  <h4 class="lastprice"> Last Price: </h4>
-                  <h4 class="change"> Change: </h4>
-                  <h4 class="changepercent"> Change (%): </h4>
-                  <h4 class="trendanalysis"> Trend Analysis: </h4>
-                </div>
-            </div>
-        </div>
+          <div class="col-md-6 col-sm-12 hero-feature">
+              <div class="thumbnail" id="profile-rep-box">
+                  <div class="caption">
+                    <h3 id="key-stats-title"><%= link_to "United Technologies (UTX)", root_path %></h3>
+                  </div>
 
-        <div class="col-md-6 col-sm-12 hero-feature">
-            <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3 id="key-stats-title"><%= link_to "Boeing (BE)", root_path %></h3>
-                </div>
+                  <div class="caption", id="box-data">
+                    <h4 class="name "> Name: </h4>
+                    <h4 class="symbol"> Symbol: </h4>
+                    <h4 class="lastprice"> Last Price: </h4>
+                    <h4 class="change"> Change: </h4>
+                    <h4 class="changepercent"> Change (%): </h4>
+                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                  </div>
+              </div>
+          </div>
 
-                <div class="caption", id="box-data">
-                  <h4 class="name "> Name: </h4>
-                  <h4 class="symbol"> Symbol: </h4>
-                  <h4 class="lastprice"> Last Price: </h4>
-                  <h4 class="change"> Change: </h4>
-                  <h4 class="changepercent"> Change (%): </h4>
-                  <h4 class="trendanalysis"> Trend Analysis: </h4>
-                </div>
-            </div>
-        </div>
+          <div class="col-md-6 col-sm-12 hero-feature">
+              <div class="thumbnail" id="profile-rep-box">
+                  <div class="caption">
+                    <h3 id="key-stats-title"><%= link_to "General Electric (GE)", root_path %></h3>
+                  </div>
 
-        <div class="col-md-6 col-sm-12 hero-feature">
-            <div class="thumbnail" id="profile-rep-box">
-                <div class="caption">
-                  <h3 id="key-stats-title"><%= link_to "Two Harbors Investment Corp. (TWO)", root_path %></h3>
-                </div>
+                  <div class="caption", id="box-data">
+                    <h4 class="name "> Name: </h4>
+                    <h4 class="symbol"> Symbol: </h4>
+                    <h4 class="lastprice"> Last Price: </h4>
+                    <h4 class="change"> Change: </h4>
+                    <h4 class="changepercent"> Change (%): </h4>
+                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                  </div>
+              </div>
+          </div>
 
-                <div class="caption", id="box-data">
-                  <h4 class="name "> Name: </h4>
-                  <h4 class="symbol"> Symbol: </h4>
-                  <h4 class="lastprice"> Last Price: </h4>
-                  <h4 class="change"> Change: </h4>
-                  <h4 class="changepercent"> Change (%): </h4>
-                  <h4 class="trendanalysis"> Trend Analysis: </h4>
-                </div>
-            </div>
-        </div>
+          <div class="col-md-6 col-sm-12 hero-feature">
+              <div class="thumbnail" id="profile-rep-box">
+                  <div class="caption">
+                    <h3 id="key-stats-title"><%= link_to "Caterpillar (CAT)", root_path %></h3>
+                  </div>
 
-    </div>
+                  <div class="caption", id="box-data">
+                    <h4 class="name "> Name: </h4>
+                    <h4 class="symbol"> Symbol: </h4>
+                    <h4 class="lastprice"> Last Price: </h4>
+                    <h4 class="change"> Change: </h4>
+                    <h4 class="changepercent"> Change (%): </h4>
+                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                  </div>
+              </div>
+          </div>
 
-    <hr>
+          <div class="col-md-6 col-sm-12 hero-feature">
+              <div class="thumbnail" id="profile-rep-box">
+                  <div class="caption">
+                    <h3 id="key-stats-title"><%= link_to "Boeing (BE)", root_path %></h3>
+                  </div>
+
+                  <div class="caption", id="box-data">
+                    <h4 class="name "> Name: </h4>
+                    <h4 class="symbol"> Symbol: </h4>
+                    <h4 class="lastprice"> Last Price: </h4>
+                    <h4 class="change"> Change: </h4>
+                    <h4 class="changepercent"> Change (%): </h4>
+                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 hero-feature">
+              <div class="thumbnail" id="profile-rep-box">
+                  <div class="caption">
+                    <h3 id="key-stats-title"><%= link_to "Two Harbors Investment Corp. (TWO)", root_path %></h3>
+                  </div>
+
+                  <div class="caption", id="box-data">
+                    <h4 class="name "> Name: </h4>
+                    <h4 class="symbol"> Symbol: </h4>
+                    <h4 class="lastprice"> Last Price: </h4>
+                    <h4 class="change"> Change: </h4>
+                    <h4 class="changepercent"> Change (%): </h4>
+                    <h4 class="trendanalysis"> Trend Analysis: </h4>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <hr>
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; 2015 StockWatcher, Inc.</p>
-            </div>
-        </div>
-    </footer>
+      <!-- Footer -->
+      <footer>
+          <div class="row">
+              <div class="col-lg-12">
+                  <p>Copyright &copy; 2015 StockWatcher, Inc.</p>
+              </div>
+          </div>
+      </footer>
 
-</div>
+  </div>
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
