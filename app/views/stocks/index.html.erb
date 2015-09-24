@@ -20,11 +20,11 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">StockWatcher</a>
+              <span class="navbar-brand mega-octicon octicon-flame"></span><a class="navbar-brand" href="/">StockWatcher</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li>
+                  <li id="logout-link">
                       <%= link_to "Logout", logout_path, method: :delete %>
                   </li>
               </ul>
@@ -34,7 +34,7 @@
 
   <!-- Page Content -->
   <div class="container">
-    <h3><span class="mega-octicon octicon-flame"></span>&nbsp<span id="welcome-message">Welcome, <%=current_user.name %></span>&nbsp</h3>
+    <h3><span id="welcome-message"><%= image_tag current_user.image_url, class: "img-thumbnail-index" %>&nbsp Welcome, <%=current_user.name %></span></h3>
 
       <!-- Jumbotron Header -->
       <header class="jumbotron hero-spacer">
