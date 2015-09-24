@@ -33,7 +33,11 @@
   </nav>
 
   <div class="container">
-    <h2>ADD A NEW STOCK</h2>
+    <br><%= form_for(@stock) do |f| %>
+      <%= f.label :ticker %>
+      <%= f.text_field :ticker %>
+      <%= f.submit "Add new stock" %>
+    <% end %>
   </div>
 
   <!-- jQuery -->
