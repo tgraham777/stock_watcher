@@ -70,4 +70,36 @@ RSpec.configure do |config|
    config.hook_into :webmock
    config.ignore_localhost = true
   end
+
+  def login
+    OmniAuth.config.test_mode = true
+
+    OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+      :provider => 'facebook',
+      info:{
+        :name => 'Tyler Graham',
+        :image_url => "www.address.com",
+      },
+      credentials:{
+        :token => ENV["github_oauth"],
+        :uid => '99999',
+      },
+    })
+  end
+
+  def invalid_login
+    OmniAuth.config.test_mode = true
+
+    OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+      :provider => 'facebook',
+      info:{
+        :name => 'test',
+        :image_url => "www.fakeaddress.com",
+      },
+      credentials:{
+        :token => 2334234,
+        :uid => '99999',
+      },
+    })
+  end
 end
