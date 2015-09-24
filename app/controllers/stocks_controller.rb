@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
   before_action :authorize!
-  
+
   def index
   end
 
@@ -8,6 +8,5 @@ class StocksController < ApplicationController
   end
 
   def new
-    @stock = 'stock'
   end
 end

@@ -1,112 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>StockWatcher</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/heroic-features.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body class="dashboard-body">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="button-logout">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">StockWatcher</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <%= link_to "Logout", logout_path, method: :delete %>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Content -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12", id="show-title">
-                <h2 id="stock-show-title">Apple (AAPL)</h2>
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="button-logout">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">StockWatcher</a>
         </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <%= link_to "Logout", logout_path, method: :delete %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-        <hr>
+<!-- Page Content -->
+<div class="container">
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12", id="show-title">
+            <h2 id="stock-show-title">Apple (AAPL)</h2>
+        </div>
+    </div>
 
-        <!-- Page Features -->
-        <div class="row text-center">
-            <div class="col-lg-8 hero-feature" id="show-box">
-                <div class="thumbnail" id="graph-placeholder">
-                    <div class="caption">
-                        <h3 id="key-stats-title">Historical Price</h3>
-                    </div>
+    <hr>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+        <div class="col-lg-8 hero-feature" id="show-box">
+            <div class="thumbnail" id="graph-placeholder">
+                <div class="caption">
+                    <h3 id="key-stats-title">Historical Price</h3>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row text-center">
-            <div class="col-lg-8 hero-feature" id="show-box">
-                <div class="thumbnail" id="key-trading-statistics">
-                    <div class="caption">
-                        <h3 id="key-stats-title">Key Trading Statistics</h3>
-                    </div>
+    <div class="row text-center">
+        <div class="col-lg-8 hero-feature" id="show-box">
+            <div class="thumbnail" id="key-trading-statistics">
+                <div class="caption">
+                    <h3 id="key-stats-title">Key Trading Statistics</h3>
+                </div>
 
-                    <div id="show-page-data">
-                        <h4 class="MarketCap "> MarketCap: </h4>
-                        <h4 class="Volume"> Volume: </h4>
-                        <h4 class="ChangeYTD"> ChangeYTD: </h4>
-                        <h4 class="ChangePercentYTD"> ChangePercentYTD: </h4>
-                        <h4 class="High "> High: </h4>
-                        <h4 class="Low"> Low: </h4>
-                        <h4 class="Open"> Open: </h4>
-                    </div>
+                <div id="show-page-data">
+                    <h4 class="MarketCap "> MarketCap: </h4>
+                    <h4 class="Volume"> Volume: </h4>
+                    <h4 class="ChangeYTD"> ChangeYTD: </h4>
+                    <h4 class="ChangePercentYTD"> ChangePercentYTD: </h4>
+                    <h4 class="High "> High: </h4>
+                    <h4 class="Low"> Low: </h4>
+                    <h4 class="Open"> Open: </h4>
+                </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-lg-8 hero-feature" id="show-box">
+            <div class="thumbnail" id="trend-analysis-detail">
+                <div class="caption">
+                    <h3 id="key-stats-title">Trend Analysis Details</h3>
                 </div>
             </div>
         </div>
+    </div>
+  </div>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-        <div class="row text-center">
-            <div class="col-lg-8 hero-feature" id="show-box">
-                <div class="thumbnail" id="trend-analysis-detail">
-                    <div class="caption">
-                        <h3 id="key-stats-title">Trend Analysis Details</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-</body>
-
-</html>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
