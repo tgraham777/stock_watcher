@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.markitondemand.com/Api/v2/Quote/json?symbol=AAPL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Date:
+      - Thu, 24 Sep 2015 04:05:51 GMT
+      Content-Length:
+      - '347'
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      P3p:
+      - CP="NON PHY ONL UNI PUR FIN COM NAV INT DEM STA HEA CUR ADM DEV OUR IND",
+        policyref="/w3c/p3p.xml"
+      Set-Cookie:
+      - 3481%5F0=F6DBFCB137942486848E5BDA197D1304; path=/; HttpOnly
+      - GZIP=1; expires=Tue, 22-Sep-2020 04:05:51 GMT; path=/
+    body:
+      encoding: UTF-8
+      string: '{"Status":"SUCCESS","Name":"Apple Inc","Symbol":"AAPL","LastPrice":114.33,"Change":0.929999999999993,"ChangePercent":0.820105820105814,"Timestamp":"Wed
+        Sep 23 15:59:00 UTC-04:00 2015","MSDate":42270.6659722222,"MarketCap":651992206260,"Volume":3202664,"ChangeYTD":110.38,"ChangePercentYTD":3.57854683819533,"High":114.72,"Low":113.3,"Open":113.59}'
+    http_version: 
+  recorded_at: Thu, 24 Sep 2015 04:05:51 GMT
+recorded_with: VCR 2.9.3
