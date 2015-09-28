@@ -44,6 +44,14 @@
           </div>
       </div>
 
+      <div class="update-button">
+        <%= button_to "Update data", stock_path(@stock.id), method: :put %>
+      </div>
+
+      <div class="delete-button">
+        <%= button_to "Remove from watchlist", stock_path(@stock.id), method: :delete %>
+      </div>
+
       <hr>
 
       <!-- Page Features -->
