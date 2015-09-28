@@ -23,7 +23,24 @@ class StocksController < ApplicationController
   end
 
   def show
-    @stock = Stock.find(params[:id])
+    @stock = Stock.find_by(id: params[:id])
+  end
+
+  def update
+    @stock = Stock.find_by(id: params[:id])
+    stock_data = StockQuoteRetrieverService.new.get_quote(@stock.ticker)
+    update_stock(stock_data)
+
+    flash[:success] = "#{stock_data[:Name]} successfully updated!"
+    redirect_to stock_path(@stock.id)
+  end
+
+  def destroy
+    @stock = Stock.find_by(id: params[:id])
+    UserStock.find_by(user_id: current_user.id, stock_id: @stock.id).destroy
+
+    flash[:success] = "#{@stock.name} successfully removed!"
+    redirect_to stocks_path
   end
 
 
@@ -51,5 +68,23 @@ class StocksController < ApplicationController
     )
 
     UserStock.create!(stock_id: @stock.id, user_id: current_user.id)
+  end
+
+  def update_stock(stock_data)
+    @stock.update_attributes(
+      ticker: stock_data[:Symbol],
+      name: stock_data[:Name],
+      last_price: stock_data[:LastPrice],
+      change: stock_data[:Change],
+      change_percent: stock_data[:ChangePercent],
+      timestamp: stock_data[:Timestamp],
+      market_cap: stock_data[:MarketCap],
+      volume: stock_data[:Volume],
+      start_value_ytd: stock_data[:ChangeYTD],
+      change_ytd: stock_data[:ChangePercentYTD],
+      high: stock_data[:High],
+      low: stock_data[:Low],
+      open: stock_data[:Open]
+    )
   end
 end
