@@ -18,7 +18,7 @@ class StocksController < ApplicationController
     # else
     #   flash[:errors] = @stock.errors.full_messages.join(", ")
     #   redirect_to new_stock_path
-    end
+    # end
   end
 
   def index
