@@ -12,22 +12,4 @@ class User < ActiveRecord::Base
     user.save
     user
   end
-
-  def create_stock_array
-    ids = self.stocks.map do |stock|
-      stock.id
-    end
-
-    service = StockQuoteRetrieverService.new
-
-    stock_data = self.stocks.map do |stock|
-      service.get_quote(stock.ticker)
-    end
-
-    ids.zip(stock_data)
-  end
-
-  def get_stock_data(ticker)
-    StockQuoteRetrieverService.new.get_quote(ticker)
-  end
 end
