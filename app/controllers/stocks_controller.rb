@@ -6,9 +6,12 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new(stock_params)
+    # quote = StockQuoteRetrieverService.new.get_quote(stock_params[:ticker])
+    # if quote[:Status] && quote[:Status] == "SUCCESS"
+      @stock = Stock.new(stock_params)
+      # @stock.name =
+      # @stock.marketcap =
 
-    if @stock.save
       @user_stock = UserStock.create!(stock_id: @stock.id, user_id: current_user.id)
       flash[:notice] = "Stock successfully added!"
       redirect_to stock_path(@stock.id)
@@ -23,6 +26,8 @@ class StocksController < ApplicationController
   end
 
   def show
+    stock = Stock.find(params[:id])
+    @stock_data = current_user.get_stock_data(stock.ticker)
   end
 
 

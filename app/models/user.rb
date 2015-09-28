@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
 
     ids.zip(stock_data)
   end
+
+  def get_stock_data(ticker)
+    StockQuoteRetrieverService.new.get_quote(ticker)
+  end
 end

@@ -40,7 +40,7 @@
       <!-- Title -->
       <div class="row">
           <div class="col-lg-12", id="show-title">
-              <h2 id="stock-show-title">Apple (AAPL)</h2>
+              <h2 id="stock-show-title"><%= @stock_data[:Name] %></h2>
           </div>
       </div>
 
@@ -65,13 +65,13 @@
                   </div>
 
                   <div id="show-page-data">
-                      <h4 class="MarketCap "> MarketCap: </h4>
-                      <h4 class="Volume"> Volume: </h4>
-                      <h4 class="ChangeYTD"> ChangeYTD: </h4>
-                      <h4 class="ChangePercentYTD"> ChangePercentYTD: </h4>
-                      <h4 class="High "> High: </h4>
-                      <h4 class="Low"> Low: </h4>
-                      <h4 class="Open"> Open: </h4>
+                      <h4 class="High "> High: <%= @stock_data[:High] %></h4>
+                      <h4 class="Low"> Low: <%= @stock_data[:Low] %></h4>
+                      <h4 class="Open"> Open: <%= @stock_data[:Open] %></h4>
+                      <h4 class="MarketCap "> Market capitalization: <%= @stock_data[:MarketCap] %> </h4>
+                      <h4 class="Volume"> Volume: <%= @stock_data[:Volume] %></h4>
+                      <h4 class="ChangeYTD"> Price at beginning of year: <%= @stock_data[:ChangeYTD] %></h4>
+                      <h4 class="ChangePercentYTD"> Change year-to-date (%): <%= @stock_data[:ChangePercentYTD] %></h4>
                   </div>
 
               </div>
