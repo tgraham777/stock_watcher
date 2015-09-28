@@ -40,7 +40,7 @@
       <!-- Title -->
       <div class="row">
           <div class="col-lg-12", id="show-title">
-              <h2 id="stock-show-title"><%= @stock_data[:Name] %></h2>
+              <h2 id="stock-show-title"><%= @stock.name %></h2>
           </div>
       </div>
 
@@ -65,13 +65,11 @@
                   </div>
 
                   <div id="show-page-data">
-                      <h4 class="High "> High: <%= @stock_data[:High] %></h4>
-                      <h4 class="Low"> Low: <%= @stock_data[:Low] %></h4>
-                      <h4 class="Open"> Open: <%= @stock_data[:Open] %></h4>
-                      <h4 class="MarketCap "> Market capitalization: <%= @stock_data[:MarketCap] %> </h4>
-                      <h4 class="Volume"> Volume: <%= @stock_data[:Volume] %></h4>
-                      <h4 class="ChangeYTD"> Price at beginning of year: <%= @stock_data[:ChangeYTD] %></h4>
-                      <h4 class="ChangePercentYTD"> Change year-to-date (%): <%= @stock_data[:ChangePercentYTD] %></h4>
+                      <h4 class="High "> High: <%= number_to_currency(@stock.high) %></h4>
+                      <h4 class="Low"> Low: <%= number_to_currency(@stock.low) %></h4>
+                      <h4 class="Open"> Open: <%= number_to_currency(@stock.open) %></h4>
+                      <h4 class="MarketCap "> Market capitalization: <%= number_to_currency(@stock.market_cap, precision: 0) %> </h4>
+                      <h4 class="Volume"> Volume: <%= number_with_delimiter(@stock.volume) %></h4>
                   </div>
 
               </div>
@@ -83,6 +81,10 @@
               <div class="thumbnail" id="trend-analysis-detail">
                   <div class="caption">
                       <h3 id="key-stats-title">Trend Analysis Details</h3>
+                  </div>
+                  <div id="show-page-trend-data">
+                      <h4 class="ChangeYTD"> Price at beginning of year: <%= number_to_currency(@stock.start_value_ytd) %></h4>
+                      <h4 class="ChangePercentYTD"> Change year-to-date (%): <%= number_to_percentage(@stock.change_ytd, precision: 2) %></h4>
                   </div>
               </div>
           </div>

@@ -59,18 +59,18 @@
 
       <!-- Page Features -->
       <div class="row text-center">
-        <% @stock_array.each do |id, stock_data| %>
+        <% @stocks.each do |stock| %>
           <div class="col-md-6 col-sm-12 hero-feature">
               <div class="thumbnail" id="profile-rep-box">
                   <div class="caption">
-                    <h3 id="key-stats-title"><%= link_to stock_data[:Name], stock_path(id) %></h3>
+                    <h3 id="key-stats-title"><%= link_to stock.name, stock_path(stock.id) %></h3>
                   </div>
                   <div class="caption", id="box-data">
-                    <h4 class="name "> Name: <%= stock_data[:Name] %></h4>
-                    <h4 class="symbol"> Symbol: <%= stock_data[:Symbol] %></h4>
-                    <h4 class="lastprice"> Last price: <%= stock_data[:LastPrice] %></h4>
-                    <h4 class="change"> Change: <%= stock_data[:Change] %></h4>
-                    <h4 class="changepercent"> Change (%): <%= stock_data[:ChangePercent] %></h4>
+                    <h4 class="name "> Name: <%= stock.name %></h4>
+                    <h4 class="symbol"> Ticker symbol: <%= stock.ticker %></h4>
+                    <h4 class="lastprice"> Last price: <%= number_to_currency(stock.last_price) %></h4>
+                    <h4 class="change"> Change: <%= number_to_currency(stock.change) %></h4>
+                    <h4 class="changepercent"> Change (%): <%= number_to_percentage(stock.change_percent, precision: 2) %></h4>
                     <h4 class="trendanalysis"> Trend analysis: HOT</h4>
                   </div>
               </div>

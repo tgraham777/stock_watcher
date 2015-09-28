@@ -13,6 +13,28 @@ body {
   padding-bottom: 10px;
 }
 
+div.alert {
+ border: 2px solid #aaa;
+ padding: 10px;
+}
+
+div.flash.success {
+ border: 2px solid green;
+ color: green;
+ font-size: 15px;
+}
+
+div.flash.error {
+ border: 2px solid red;
+ color: red;
+ font-size: 15px;
+}
+
+div.flash.notice {
+ border: 2px solid blue;
+ color: blue;
+}
+
 
 //Welcome
 .home-container {
@@ -186,6 +208,11 @@ body {
 }
 
 #show-page-data {
+  text-align: left;
+  margin-left: 15px;
+}
+
+#show-page-trend-data {
   text-align: left;
   margin-left: 15px;
 }
