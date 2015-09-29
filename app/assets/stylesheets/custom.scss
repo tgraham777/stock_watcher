@@ -194,8 +194,8 @@ div.flash.notice {
   position: absolute;
   right: -200px;
   width: 800px;
-  height: 320px;
-  top: 300px;
+  height: 250px;
+  top: 520px;
 }
 
 #stock-show-title {
@@ -221,6 +221,12 @@ div.flash.notice {
   position: absolute;
   right: -200px;
   width: 800px;
-  height: 300px;
-  top: 620px;
+  height: 160px;
+  top: 770px;
+}
+
+#graph-placeholder {
+  height: 400px;
+  padding-bottom: 15px;
+  border-color: #FFF;
 }

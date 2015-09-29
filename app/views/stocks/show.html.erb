@@ -56,11 +56,12 @@
 
       <!-- Page Features -->
       <div class="row text-center">
-          <div class="col-lg-8 hero-feature" id="show-box">
+          <div class="col-lg-8 hero-feature" id="price-graph-box">
               <div class="thumbnail" id="graph-placeholder">
                   <div class="caption">
-                      <h3 id="key-stats-title">Historical Price</h3>
+                      <h3 id="key-stats-title">Intra-Day Price History</h3>
                   </div>
+                  <%= image_tag "http://chart.finance.yahoo.com/t?s=#{@stock.ticker}&lang=en-US&region=US&width=700&height=420", class: "stock-price-graph" %>
               </div>
           </div>
       </div>
