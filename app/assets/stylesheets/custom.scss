@@ -35,6 +35,10 @@ div.flash.notice {
  color: blue;
 }
 
+.copyright-index {
+  margin-top: -35px;
+}
+
 
 //Welcome
 .home-container {
@@ -134,7 +138,8 @@ div.flash.notice {
 }
 
 #profile-rep-box {
-  height: 300px;
+  height: 275px;
+  margin-top: -20px;
 }
 
 #commit-boxes {
@@ -170,7 +175,7 @@ div.flash.notice {
 #your-watchlist {
   text-align: center;
   font-weight: 500;
-  padding-bottom: 15px;
+  padding-bottom: 35px;
   margin-top: -5px;
   color: #555;
 }
@@ -187,15 +192,15 @@ div.flash.notice {
   right: -200px;
   width: 800px;
   height: 300px;
-  margin-top: 5px;
 }
 
 #key-trading-statistics {
   position: absolute;
   right: -200px;
   width: 800px;
-  height: 250px;
+  height: 230px;
   top: 520px;
+  margin-top: -10px;
 }
 
 #stock-show-title {
@@ -204,7 +209,7 @@ div.flash.notice {
 }
 
 #key-stats-title {
-  margin-top: 10px;
+  margin-top: -5px;
 }
 
 #show-page-data {
@@ -221,12 +226,39 @@ div.flash.notice {
   position: absolute;
   right: -200px;
   width: 800px;
-  height: 160px;
-  top: 770px;
+  height: 140px;
+  top: 740px;
 }
 
 #graph-placeholder {
   height: 400px;
   padding-bottom: 15px;
   border-color: #FFF;
+}
+
+.add-another-stock-button {
+  padding-top: 5px;
+}
+
+.delete-button {
+  display: inline-block;
+}
+
+.add-another-stock-button {
+  display: inline-block;
+}
+
+// New page
+.new-body {
+  background-image: image-url("stocks3.jpg");
+}
+
+#new-stock-form {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.ticker-label {
+  color: #DDD;
+  font-size: 20px;
 }

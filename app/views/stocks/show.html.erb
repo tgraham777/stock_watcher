@@ -42,14 +42,24 @@
           <div class="col-lg-12", id="show-title">
               <h2 id="stock-show-title"><%= @stock.name %></h2>
           </div>
-      </div>
+      </div><br>
+
+      <p>
+        <strong>Time data last updated: <%= Time.parse(@stock.timestamp).strftime('%A, %d %b %Y %l:%M %p') %></strong>
+      </p>
 
       <div class="update-button">
         <%= button_to "Update data", stock_path(@stock.id), method: :put %>
       </div>
 
-      <div class="delete-button">
-        <%= button_to "Remove from watchlist", stock_path(@stock.id), method: :delete %>
+      <br><div class="update-delete-buttons">
+        <div class="delete-button">
+          <%= button_to "Remove from watchlist", stock_path(@stock.id), method: :delete %>
+        </div>&nbsp
+
+        <div class="add-another-stock-button">
+          <%= button_to "Add another stock", new_stock_path, method: :get %>
+        </div>
       </div>
 
       <hr>
@@ -61,7 +71,10 @@
                   <div class="caption">
                       <h3 id="key-stats-title">Intra-Day Price History</h3>
                   </div>
-                  <%= image_tag "http://chart.finance.yahoo.com/t?s=#{@stock.ticker}&lang=en-US&region=US&width=700&height=420", class: "stock-price-graph" %>
+
+                  <div class="price-graph">
+                    <%= image_tag "http://chart.finance.yahoo.com/t?s=#{@stock.ticker}&lang=en-US&region=US&width=700&height=420", class: "stock-price-graph" %>
+                  </div>
               </div>
           </div>
       </div>
@@ -98,7 +111,8 @@
               </div>
           </div>
       </div>
-    </div>
+
+
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
 

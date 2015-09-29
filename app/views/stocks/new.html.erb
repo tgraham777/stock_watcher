@@ -8,7 +8,7 @@
 
 </head>
 
-<body class="dashboard-body">
+<body class="new-body">
 
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -36,11 +36,13 @@
   </nav>
 
   <div class="container">
-    <br><%= form_for(@stock) do |f| %>
-      <%= f.label :ticker %>
-      <%= f.text_field :ticker %>
-      <%= f.submit "Add new stock" %>
-    <% end %>
+    <div id="new-stock-form">
+      <br><%= form_for(@stock) do |f| %>
+        <%= f.label :ticker, "Ticker symbol:", class: "ticker-label" %>&nbsp
+        <%= f.text_field :ticker %><br><br>
+        <%= f.submit "Add new stock" %>
+      <% end %>
+    </div>
   </div>
 
   <!-- jQuery -->
