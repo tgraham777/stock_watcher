@@ -71,10 +71,14 @@
                     <h4> <span class="lastprice">Last price:</span>&nbsp&nbsp<%= number_to_currency(stock.last_price) %></h4>
                     <h4> <span class="change">Daily change:</span>&nbsp&nbsp<%= number_to_currency(stock.change) %></h4>
                     <h4> <span class="changepercent">Daily change (%):</span>&nbsp&nbsp<%= number_to_percentage(stock.change_percent, precision: 2) %></h4>
-                    <h4> <span class="trendanalysis">Trend analysis:</span>&nbsp&nbspHAWWWWTTTTT</h4>
+                    <h4 class="trend"> <span class="trendanalysis">Trend analysis:</span>&nbsp&nbspHAWWWWTTTTT</h4>
                   </div>
-                  <%= button_to "Remove from watchlist", stock_path(stock.id), method: :delete %>
-                  <%= button_to "Add to purchased stocks", new_user_stock_path, method: :get %>
+                  <div class="delete-button">
+                    <%= button_to "Remove from watchlist", stock_path(stock.id), method: :delete %>
+                  </div>&nbsp
+                  <div class="purchase-stock-button">
+                    <%= button_to "Add to purchased stocks", new_user_stock_path, method: :get %>
+                  </div>
               </div>
           </div>
         <% end %>

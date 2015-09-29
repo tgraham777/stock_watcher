@@ -23,6 +23,7 @@ div.flash.success {
  color: green;
  font-size: 15px;
  background-color: #EEE;
+ text-align: center;
 }
 
 div.flash.error {
@@ -30,6 +31,7 @@ div.flash.error {
  color: red;
  font-size: 15px;
  background-color: #EEE;
+ text-align: center;
 }
 
 div.flash.notice {
@@ -140,7 +142,7 @@ div.flash.notice {
 }
 
 #profile-rep-box {
-  height: 280px;
+  height: 320px;
   margin-top: -20px;
 }
 
@@ -166,6 +168,10 @@ div.flash.notice {
 
 .trendanalysis {
   font-weight: bolder;
+}
+
+.trend {
+  color: #BB3333;
 }
 
 #commit-boxes {
@@ -295,6 +301,10 @@ div.flash.notice {
 }
 
 .add-another-stock-button {
+  display: inline-block;
+}
+
+.purchase-stock-button {
   display: inline-block;
 }
 
