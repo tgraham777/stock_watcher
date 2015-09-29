@@ -144,6 +144,30 @@ div.flash.notice {
   margin-top: -20px;
 }
 
+.name {
+  font-weight: bolder;
+}
+
+.symbol {
+  font-weight: bolder;
+}
+
+.lastprice {
+  font-weight: bolder;
+}
+
+.change {
+  font-weight: bolder;
+}
+
+.changepercent {
+  font-weight: bolder;
+}
+
+.trendanalysis {
+  font-weight: bolder;
+}
+
 #commit-boxes {
   height: 300px;
 }
@@ -189,11 +213,14 @@ div.flash.notice {
   text-align: center;
 }
 
-#graph-placeholder {
-  position: absolute;
-  right: -200px;
-  width: 800px;
-  height: 300px;
+.thumbnail {
+  background-color: #FAFAF8;
+  border-color: #777;
+}
+
+.thumbnail.graph-placeholder {
+  background-color: #FFF;
+  border-color: #FFF;
 }
 
 #key-trading-statistics {
@@ -205,12 +232,40 @@ div.flash.notice {
   margin-top: -10px;
 }
 
+.high {
+  font-weight: bolder;
+}
+
+.low {
+  font-weight: bolder;
+}
+
+.open {
+  font-weight: bolder;
+}
+
+.marketcap {
+  font-weight: bolder;
+}
+
+.volume {
+  font-weight: bolder;
+}
+
+.changeytd {
+  font-weight: bolder;
+}
+
+.changepercentytd {
+  font-weight: bolder;
+}
+
 #stock-show-title {
   font-weight: 500;
   margin-bottom: -5px;
 }
 
-#key-stats-title {
+.key-stats-title {
   margin-top: -5px;
 }
 
@@ -230,12 +285,6 @@ div.flash.notice {
   width: 800px;
   height: 140px;
   top: 740px;
-}
-
-#graph-placeholder {
-  height: 400px;
-  padding-bottom: 15px;
-  border-color: #FFF;
 }
 
 .add-another-stock-button {
@@ -263,4 +312,14 @@ div.flash.notice {
 .ticker-label {
   color: #DDD;
   font-size: 20px;
+}
+
+
+
+.thumbnail.graph-placeholder {
+  position: absolute;
+  right: -200px;
+  width: 800px;
+  height: 300px;
+  background-color: #FFF;
 }
