@@ -57,6 +57,10 @@
           <%= button_to "Remove from watchlist", stock_path(@stock.id), method: :delete %>
         </div>&nbsp
 
+        <div class="purchase-stock-button">
+          <%= button_to "Add to purchased stocks", new_user_stock_path, method: :get %>
+        </div>&nbsp&nbsp&nbsp
+
         <div class="add-another-stock-button">
           <%= button_to "Add another stock", new_stock_path, method: :get %>
         </div>
