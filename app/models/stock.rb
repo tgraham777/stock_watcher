@@ -10,6 +10,7 @@ class Stock < ActiveRecord::Base
     limit_somewhat_overvalued = 1 * one_yr_sp500_std_dev
     limit_somewhat_undervalued = -1 * one_yr_sp500_std_dev
     limit_undervalued = -2 * one_yr_sp500_std_dev
+    # byebug
 
     if rel_performance > limit_overvalued
       "Overvalued"
