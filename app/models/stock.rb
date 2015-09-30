@@ -2,7 +2,7 @@ class Stock < ActiveRecord::Base
   has_many :user_stocks
   has_many :users, through: :user_stocks
 
-  def find_lt_trend(stock_change, spy_change)
+  def self.find_lt_trend(stock_change, spy_change)
     rel_performance = stock_change.to_f - spy_change
 
     one_yr_sp500_std_dev = 9.16    #source Morningstar, value as of 9/30/15
@@ -24,10 +24,10 @@ class Stock < ActiveRecord::Base
     end
   end
 
-  def find_st_trend(stock_change, spy_change)
+  def self.find_st_trend(stock_change, spy_change)
     rel_performance = stock_change.to_f - spy_change.to_f
 
-    daily_sp500_std_dev = 0.98    #source Morningstar, value as of 9/30/15
+    daily_sp500_std_dev = 0.98    #source CFA Institute, value as of 8/27/12
     limit_hot = 2 * daily_sp500_std_dev
     limit_outperforming = 1 * daily_sp500_std_dev
     limit_underperforming = -1 * daily_sp500_std_dev
@@ -43,6 +43,24 @@ class Stock < ActiveRecord::Base
       "Underperforming"
     elsif rel_performance < limit_cold
       "Cold"
+    end
+  end
+
+  def self.overall_trend(lt_trend, st_trend)
+    if (lt_trend == "Overvalued" || lt_trend == "Somewhat overvalued") && (st_trend == "Hot" || st_trend == "Outperforming" || st_trend == "Neutral")
+      "Wait to purchase or sell"
+    elsif (lt_trend == "Overvalued" || lt_trend == "Somewhat overvalued") && (st_trend == "Underperforming" || st_trend == "Cold")
+      "Potential selling opportunity"
+    elsif lt_trend == "Fairly valued" && (st_trend == "Hot" || st_trend == "Outperforming")
+      "Potential breakout to the upside in progress"
+    elsif lt_trend == "Fairly valued" && (st_trend == "Neutral" || st_trend == "Underperforming")
+      "Wait to purchase or sell"
+    elsif lt_trend == "Fairly valued" && st_trend == "Cold"
+      "Potential breakout to the downside in progress"
+    elsif (lt_trend == "Undervalued" || lt_trend == "Somewhat undervalued") && (st_trend == "Hot" || st_trend == "Outperforming")
+      "Potential rebound in progress, consider buying"
+    elsif (lt_trend == "Undervalued" || lt_trend == "Somewhat undervalued") && (st_trend == "Neutral" || st_trend == "Underperforming" || st_trend == "Cold")
+      "Wait to purchase or sell"
     end
   end
 end

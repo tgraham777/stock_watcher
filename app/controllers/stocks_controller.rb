@@ -52,6 +52,12 @@ class StocksController < ApplicationController
   end
 
   def set_new_stock(stock_data)
+    spy_change = UserStock.find_change_ytd
+    lt_trend = Stock.find_lt_trend(stock_data[:ChangeYTD], spy_change)
+    spy_daily_pct_chg = FinanceScraper.find_spy_daily_percent_change
+    st_trend = Stock.find_st_trend(stock_data[:ChangePercent], FinanceScraper.find_spy_daily_percent_change)
+    sw_analysis = Stock.overall_trend(lt_trend, st_trend)
+
     @stock = Stock.create!(
       ticker: stock_data[:Symbol],
       name: stock_data[:Name],
@@ -65,13 +71,24 @@ class StocksController < ApplicationController
       change_ytd: stock_data[:ChangePercentYTD],
       high: stock_data[:High],
       low: stock_data[:Low],
-      open: stock_data[:Open]
+      open: stock_data[:Open],
+      spy_chg_ytd: spy_change,
+      lt_trend: lt_trend,
+      spy_daily_pct_chg: spy_daily_pct_chg,
+      st_trend: st_trend,
+      recommendation: sw_analysis
     )
 
     UserStock.create!(stock_id: @stock.id, user_id: current_user.id)
   end
 
   def update_stock(stock_data)
+    spy_change = UserStock.find_change_ytd
+    lt_trend = Stock.find_lt_trend(stock_data[:ChangeYTD], spy_change)
+    spy_daily_pct_chg = FinanceScraper.find_spy_daily_percent_change
+    st_trend = Stock.find_st_trend(stock_data[:ChangePercent], FinanceScraper.find_spy_daily_percent_change)
+    sw_analysis = Stock.overall_trend(lt_trend, st_trend)
+
     @stock.update_attributes(
       ticker: stock_data[:Symbol],
       name: stock_data[:Name],
@@ -85,7 +102,12 @@ class StocksController < ApplicationController
       change_ytd: stock_data[:ChangePercentYTD],
       high: stock_data[:High],
       low: stock_data[:Low],
-      open: stock_data[:Open]
+      open: stock_data[:Open],
+      spy_chg_ytd: spy_change,
+      lt_trend: lt_trend,
+      spy_daily_pct_chg: spy_daily_pct_chg,
+      st_trend: st_trend,
+      recommendation: sw_analysis
     )
   end
 end

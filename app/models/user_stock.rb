@@ -6,7 +6,7 @@ class UserStock < ActiveRecord::Base
     quantity.to_i * price.to_f
   end
 
-  def find_change_ytd
+  def self.find_change_ytd
     original_price = 2058.2
     current_price = FinanceScraper.find_spy_price.delete(',').to_f
 
