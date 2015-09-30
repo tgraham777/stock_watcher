@@ -7,7 +7,6 @@ RSpec.describe "user" do
 
   scenario "can login with facebook account" do
     login
-
     visit root_path
     click_link("Log in with Facebook")
 
