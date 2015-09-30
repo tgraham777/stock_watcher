@@ -34,7 +34,7 @@ class Stock < ActiveRecord::Base
     limit_cold = -2 * daily_sp500_std_dev
 
     if rel_performance > limit_hot
-      "HOT"
+      "Hot"
     elsif rel_performance < limit_hot && rel_performance > limit_outperforming
       "Outperforming"
     elsif rel_performance < limit_outperforming && rel_performance > limit_underperforming
@@ -42,7 +42,7 @@ class Stock < ActiveRecord::Base
     elsif rel_performance < limit_underperforming && rel_performance > limit_cold
       "Underperforming"
     elsif rel_performance < limit_cold
-      "COLD"
+      "Cold"
     end
   end
 end
