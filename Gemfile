@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-facebook'
 gem 'hurley'
 gem 'figaro'
-gem 'skylight', '~> 0.8.0'
+gem 'skylight'
 gem 'nokogiri'
 
 # Use ActiveModel has_secure_password

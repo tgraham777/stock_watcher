@@ -248,7 +248,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simplecov
-  skylight (~> 0.8.0)
+  skylight
   spring
   turbolinks
   uglifier (>= 1.3.0)
