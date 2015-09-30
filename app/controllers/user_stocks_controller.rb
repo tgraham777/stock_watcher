@@ -20,11 +20,8 @@ class UserStocksController < ApplicationController
   end
 
   def update
-    user_stock = UserStock.find_by(id: params[:id])
-    user_stock.purchase_price = params[:user_stock][:purchase_price]
-    user_stock.quantity = params[:user_stock][:quantity]
-    user_stock.purchased = true
-    user_stock.save!
+    @user_stock = UserStock.find_by(id: params[:id])
+    update_purchase_attributes
 
     flash[:success] = "Stock purchase successfully created!"
     redirect_to user_stocks_path
@@ -36,6 +33,12 @@ class UserStocksController < ApplicationController
 
   private
 
-  def user_stock_params
+  def update_purchase_attributes
+    @user_stock.purchase_price = params[:user_stock][:purchase_price]
+    @user_stock.quantity = params[:user_stock][:quantity]
+    @user_stock.spy_price = FinanceScraper.find_spy_price
+    @user_stock.purchased = true
+
+    @user_stock.save!
   end
 end
