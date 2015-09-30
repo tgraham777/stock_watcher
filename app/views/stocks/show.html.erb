@@ -112,7 +112,12 @@
                       <h4> <span class="trend-detail"> Price at beginning of year: </span> <%= number_to_currency(@stock.start_value_ytd) %></h4>
                       <h4> <span class="trend-detail"> Change year-to-date (%): </span> <%= number_to_percentage(@stock.change_ytd, precision: 2) %></h4>
                       <h4> <span class="trend-detail"> S&P 500 price at beginning of year: </span> $2,058.20 </h4>
-                      <h4> <span class="trend-detail"> S&P 500 change year-to-date (%): </span> <%= number_to_percentage(@user_stock.find_change_ytd, precision: 2) %></h4>
+                      <h4> <span class="trend-detail"> S&P 500 change year-to-date (%): </span> <%= number_to_percentage(@user_stock.find_change_ytd, precision: 2) %></h4><br>
+
+                      <h4> <span class="trend-detail"> Daily change: </span> <%= number_to_currency(@stock.change) %></h4>
+                      <h4> <span class="trend-detail"> Daily change (%): </span> <%= number_to_percentage(@stock.change_percent, precision: 2) %></h4>
+                      <h4> <span class="trend-detail"> S&P 500 daily change: </span> <%= number_to_currency(FinanceScraper.find_spy_daily_change) %> </h4>
+                      <h4> <span class="trend-detail"> S&P 500 daily change (%): </span> <%= number_to_percentage(FinanceScraper.find_spy_daily_percent_change, precision: 2) %> </h4>
                   </div>
               </div>
           </div>
