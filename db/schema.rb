@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150929221419) do
+ActiveRecord::Schema.define(version: 20150930085234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stocks", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "ticker"
     t.string   "name"
     t.string   "last_price"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20150929221419) do
     t.string   "high"
     t.string   "low"
     t.string   "open"
+    t.string   "spy_chg_ytd"
+    t.string   "lt_trend"
+    t.string   "spy_daily_pct_chg"
+    t.string   "st_trend"
+    t.string   "recommendation"
   end
 
   create_table "user_stocks", force: :cascade do |t|
