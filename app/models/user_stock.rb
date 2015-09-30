@@ -25,4 +25,11 @@ class UserStock < ActiveRecord::Base
 
     ((current_price - original_price) / original_price) * 100
   end
+
+  def find_profit_loss(purchase_price, current_price, quantity)
+    original_price = purchase_price.delete(',').to_f
+    present_price = current_price.delete(',').to_f
+    number_of_shares = quantity.delete(',').to_f
+    (present_price - original_price) * number_of_shares
+  end
 end

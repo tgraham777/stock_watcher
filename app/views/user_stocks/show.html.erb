@@ -46,16 +46,17 @@
         </div>
     </div>
 
-    <br><strong>Purchase date/time:</strong> <%= @user_stock.updated_at.strftime('%A, %d %b %Y %l:%M %p') %><br>
-    <strong>Total value:</strong> <%= number_to_currency(
+    <br><h5><strong>Purchase date/time:</strong> <%= @user_stock.updated_at.strftime('%A, %d %b %Y %l:%M %p') %></h5>
+    <h5><strong>Number of shares:</strong> <%= @user_stock.quantity %></h5>
+    <h5><strong>Total value:</strong> <%= number_to_currency(
                                 @user_stock.total_value(@user_stock.quantity,
                                 @user_stock.purchase_price),
-                                precision: 2) %><hr>
+                                precision: 2) %></h5><hr>
 
-    <strong>Purchase price:</strong> <%= number_to_currency(@user_stock.purchase_price, precision: 2) %><br>
-    <strong>Return since purchase:</strong> <%= number_to_percentage(@user_stock.find_stock_return(@user_stock.purchase_price, @user_stock.stock.last_price), precision: 2) %><br>
-    <strong>S&P 500 price at purchase date:</strong> <%= number_to_currency(@user_stock.spy_price) %><br>
-    <strong>S&P 500 return since purchase date:</strong> <%= number_to_percentage(@user_stock.find_spy_return(@user_stock.spy_price), precision: 2) %>
+    <h4><strong>Purchase price:</strong> <%= number_to_currency(@user_stock.purchase_price, precision: 2) %></h4>
+    <h4><strong>Return since purchase:</strong> <%= number_to_percentage(@user_stock.find_stock_return(@user_stock.purchase_price, @user_stock.stock.last_price), precision: 2) %></h4><br>
+
+    <h4 class="profit-loss"><strong>Profit/Loss:</strong> <%= number_to_currency(@user_stock.find_profit_loss(@user_stock.purchase_price, @user_stock.stock.last_price, @user_stock.quantity)) %></h4>
   </div>
 
   <!-- jQuery -->
