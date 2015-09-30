@@ -53,13 +53,13 @@ class Stock < ActiveRecord::Base
     elsif (lt_trend == "Overvalued" || lt_trend == "Somewhat overvalued") && (st_trend == "Underperforming" || st_trend == "Cold")
       "Potential selling opportunity"
     elsif lt_trend == "Fairly valued" && (st_trend == "Hot" || st_trend == "Outperforming")
-      "Potential breakout to the upside in progress"
+      "Potential rally in progress"
     elsif lt_trend == "Fairly valued" && (st_trend == "Neutral" || st_trend == "Underperforming")
       "Wait to purchase or sell"
     elsif lt_trend == "Fairly valued" && st_trend == "Cold"
-      "Potential breakout to the downside in progress"
+      "Potential drop in progress"
     elsif (lt_trend == "Undervalued" || lt_trend == "Somewhat undervalued") && (st_trend == "Hot" || st_trend == "Outperforming")
-      "Potential rebound in progress, consider buying"
+      "Potential rebound in progress"
     elsif (lt_trend == "Undervalued" || lt_trend == "Somewhat undervalued") && (st_trend == "Neutral" || st_trend == "Underperforming" || st_trend == "Cold")
       "Wait to purchase or sell"
     end
