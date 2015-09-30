@@ -91,11 +91,11 @@
                   </div>
 
                   <div id="show-page-data">
-                      <h4> <span class="high"> High: </span> <%= number_to_currency(@stock.high) %></h4>
-                      <h4> <span class="low"> Low: </span> <%= number_to_currency(@stock.low) %></h4>
-                      <h4> <span class="open"> Open: </span> <%= number_to_currency(@stock.open) %></h4>
+                      <h4> <span class="high"> Daily high: </span> <%= number_to_currency(@stock.high) %></h4>
+                      <h4> <span class="low"> Daily low: </span> <%= number_to_currency(@stock.low) %></h4>
+                      <h4> <span class="open"> Daily open: </span> <%= number_to_currency(@stock.open) %></h4>
                       <h4> <span class="marketcap"> Market capitalization: </span> $<%= number_to_human(@stock.market_cap, precision: 4) %> </h4>
-                      <h4> <span class="volume"> Volume: </span> <%= number_with_delimiter(@stock.volume) %></h4>
+                      <h4> <span class="volume"> Volume: </span> <%= number_with_delimiter(@stock.volume) %> shares</h4>
                   </div>
 
               </div>
@@ -109,8 +109,10 @@
                       <h3 id="key-stats-title">Trend Analysis Details</h3>
                   </div>
                   <div id="show-page-trend-data">
-                      <h4> <span class="changeytd"> Price at beginning of year: </span> <%= number_to_currency(@stock.start_value_ytd) %></h4>
-                      <h4> <span class="changepercentytd"> Change year-to-date (%): </span> <%= number_to_percentage(@stock.change_ytd, precision: 2) %></h4>
+                      <h4> <span class="trend-detail"> Price at beginning of year: </span> <%= number_to_currency(@stock.start_value_ytd) %></h4>
+                      <h4> <span class="trend-detail"> Change year-to-date (%): </span> <%= number_to_percentage(@stock.change_ytd, precision: 2) %></h4>
+                      <h4> <span class="trend-detail"> S&P 500 price at beginning of year: </span> $2,058.20 </h4>
+                      <h4> <span class="trend-detail"> S&P 500 change year-to-date (%): </span> <%= number_to_percentage(@user_stock.find_change_ytd, precision: 2) %></h4>
                   </div>
               </div>
           </div>

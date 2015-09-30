@@ -12,6 +12,7 @@ class UserStocksController < ApplicationController
   end
 
   def show
+    @user_stock = UserStock.find_by(id: params[:id])
   end
 
   def edit
