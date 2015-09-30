@@ -212,6 +212,14 @@ div.flash.notice {
   color: #555;
 }
 
+.new-stock-button {
+  display: inline-block;
+}
+
+.purchased-stock-button {
+  display: inline-block;
+}
+
 
 
 //Show page
@@ -312,6 +320,8 @@ div.flash.notice {
   margin-top: -20px;
 }
 
+
+
 // New page
 .new-body {
   background-image: image-url("stocks3.jpg");
@@ -335,4 +345,18 @@ div.flash.notice {
   width: 800px;
   height: 300px;
   background-color: #FFF;
+}
+
+
+// Edit UserStock Page
+.purchase {
+  color: #DDD;
+  font-size: 20px;
+}
+
+
+
+// UserStock index page
+#your-purchased-stocks {
+  text-align: center;
 }

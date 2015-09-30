@@ -1,0 +1,63 @@
+<head>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="button-logout">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <span class="navbar-brand mega-octicon octicon-flame"></span><a class="navbar-brand" href="/">StockWatcher</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li id="logout-link">
+                      <%= link_to "Logout", logout_path, method: :delete %>
+                  </li>
+                  <li>
+                      <%= link_to "Back to Watchlist", stocks_path %>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 id="your-purchased-stocks">Your Purchased Stocks</h2>
+        </div>
+    </div>
+
+    <br><% @purchased_user_stocks.each do |user_stock| %>
+      <strong><%= link_to user_stock.stock.name, user_stock_path(user_stock.id) %></strong><br>
+      Purchase date/time: <%= user_stock.updated_at.strftime('%A, %d %b %Y %l:%M %p') %><br>
+      Number of shares: <%= user_stock.quantity %><br>
+      Purchase price: <%= number_to_currency(user_stock.purchase_price, precision: 2) %><br>
+      <strong>Total value: <%= number_to_currency(
+        user_stock.total_value(user_stock.quantity, user_stock.purchase_price),
+        precision: 2) %></strong><hr>
+    <% end %>
+  </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
