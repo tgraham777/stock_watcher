@@ -10,7 +10,7 @@ class FinanceScraper
 
   def self.find_spy_daily_percent_change
     page = Nokogiri::HTML(open("http://www.investing.com/indices/us-spx-500-components"))
-    daily_change_with_symbol = page.css('span.arial_20.greenFont.pid-166-pcp.parentheses').text
+    daily_change_with_symbol = page.css('span.arial_20.pid-166-pcp.parentheses.redFont').text
     daily_change = daily_change_with_symbol.delete('+').delete('-').delete('%')
   end
 end
