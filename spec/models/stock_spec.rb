@@ -95,7 +95,7 @@ RSpec.describe Stock, type: :model do
       lt_trend = "Fairly valued"
       st_trend = "Hot"
 
-      expect(Stock.overall_trend(lt_trend, st_trend)).to eq("Potential breakout to the upside in progress")
+      expect(Stock.overall_trend(lt_trend, st_trend)).to eq("Potential rally in progress")
     end
 
     it "returns wait to purchase when fairly valued and neutral" do
@@ -109,14 +109,14 @@ RSpec.describe Stock, type: :model do
       lt_trend = "Fairly valued"
       st_trend = "Cold"
 
-      expect(Stock.overall_trend(lt_trend, st_trend)).to eq("Potential breakout to the downside in progress")
+      expect(Stock.overall_trend(lt_trend, st_trend)).to eq("Potential drop in progress")
     end
 
     it "returns potential rebound in progress" do
       lt_trend = "Undervalued"
       st_trend = "Hot"
 
-      expect(Stock.overall_trend(lt_trend, st_trend)).to eq("Potential rebound in progress, consider buying")
+      expect(Stock.overall_trend(lt_trend, st_trend)).to eq("Potential rebound in progress")
     end
 
     it "returns wait to sell when undervalued and cold" do
