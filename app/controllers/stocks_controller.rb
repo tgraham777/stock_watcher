@@ -84,7 +84,7 @@ class StocksController < ApplicationController
 
   def update_stock(stock_data)
     spy_change = UserStock.find_change_ytd
-    lt_trend = Stock.find_lt_trend(stock_data[:ChangeYTD], spy_change)
+    lt_trend = Stock.find_lt_trend(stock_data[:ChangePercentYTD], spy_change)
     spy_daily_pct_chg = FinanceScraper.find_spy_daily_percent_change
     st_trend = Stock.find_st_trend(stock_data[:ChangePercent], FinanceScraper.find_spy_daily_percent_change)
     sw_analysis = Stock.overall_trend(lt_trend, st_trend)
